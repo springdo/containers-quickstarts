@@ -4,3 +4,15 @@ baseurl=https://dl.google.com/linux/chrome/rpm/stable/$basearch
 enabled=1
 gpgcheck=1
 gpgkey=https://dl-ssl.google.com/linux/linux_signing_key.pub
+
+[centos-extras]
+name=centos-extras
+baseurl=http://mirror.centos.org/centos/7/extras/x86_64/
+enabled=1
+gpgcheck=0
+
+[centos-os]
+name=centos-os
+baseurl=http://mirror.centos.org/centos/7/os/x86_64/
+enabled=1
+gpgcheck=0
