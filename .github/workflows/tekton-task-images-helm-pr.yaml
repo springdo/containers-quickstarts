@@ -27,5 +27,5 @@ jobs:
           tags: ${{ steps.check_version.outputs.IMAGE_TAGS }}
       - name: Test image contains the version of the binary
         run: |
-          echo "Running: docker run ${image_name}:${{ steps.check_version.outputs.IMAGE_TAGS }} helm version"
+          echo "Running: docker run ${image_name}:${{ steps.check_version.outputs.IMAGE_TAGS }} helm version | grep ${{ steps.check_version.outputs.IMAGE_TAGS }}"
           docker run ${image_name}:${{ steps.check_version.outputs.IMAGE_TAGS }} helm version | grep ${{ steps.check_version.outputs.IMAGE_TAGS }}
