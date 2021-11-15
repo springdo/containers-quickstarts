@@ -1,9 +1,9 @@
-FROM quay.io/openshift/origin-jenkins-agent-base:4.7
+FROM quay.io/openshift/origin-jenkins-agent-base:4.9
 ARG ANSIBLE_VERSION=2.9.13
 
 LABEL \
       release="1" \
-      version="4.7" \
+      version="4.8" \
       architecture="x86_64" \
       io.k8s.display-name="Jenkins Agent Ansible" \
       name="openshift/origin-jenkins-agent-ansible-ubi8" \
@@ -34,7 +34,9 @@ RUN set -x \
      && rm -rf /var/cache/dnf \
      && alternatives --set python3 /usr/bin/python3.8 \
      && python3 -m pip install ${PIP_PKGS} \
-    && echo
+     && chmod -R 775 /etc/alternatives \
+     && chmod -R 775 /var/lib/alternatives \
+     && echo
 
 USER 1001
 ENV \
