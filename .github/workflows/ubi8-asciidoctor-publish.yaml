@@ -15,7 +15,7 @@ jobs:
       image_name: ubi8-asciidoctor
     runs-on: ubuntu-18.04
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@v3
       - name: Get image tags
         id: image_tags
         run: |
